@@ -1,7 +1,8 @@
 {
-  "name": "vite-template-solid",
-  "version": "0.0.0",
-  "description": "",
+  "name": "@recodable/contribute-solidjs",
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
   "scripts": {
     "start": "vite",
     "dev": "concurrently 'npm:dev:*'",
@@ -11,7 +12,6 @@
     "serve": "vite preview",
     "cache:clear": "docker exec -it solid-help-wanted_redis_1 redis-cli FLUSHALL"
   },
-  "license": "MIT",
   "devDependencies": {
     "@types/koa": "^2.13.4",
     "autoprefixer": "^10.3.1",
