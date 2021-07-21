@@ -13,9 +13,11 @@ const App: Component = () => {
   );
 
   return (
-    <div class="min-h-screen min-w-screen bg-gray-900 text-white p-16">
+    <div class="min-h-screen min-w-screen bg-gray-900 text-white p-16 flex flex-col justify-center items-center gap-12">
+      <h1 class="text-5xl font-bold">Contribute to Solid.js Ecosystem</h1>
+
       <Show when={!issues.loading}>
-        <ul class="mx-auto flex flex-col gap-6" style="max-width: 768px;">
+        <ul class="flex flex-col gap-6" style="max-width: 768px;">
           <For each={issues()}>
             {(issue) => (
               <li>
@@ -78,28 +80,24 @@ const App: Component = () => {
                   </svg>
                 </a>
               </li>
-
-              // <li>
-              //   <a href={issue.html_url} target="_blank">
-              //     <h3 class="text-2xl font-semibold">{issue.title}</h3>
-
-              //     <ul>
-              //       <For each={issue.labels}>
-              //         {(label: Label) => {
-              //           return (
-              //             <li style={`background-color: ${label.color}`}>
-              //               {label.name}
-              //             </li>
-              //           );
-              //         }}
-              //       </For>
-              //     </ul>
-              //   </a>
-              // </li>
             )}
           </For>
         </ul>
       </Show>
+
+      <footer>
+        <p class="text-gray-600">
+          This project is{" "}
+          <a
+            href="https://github.com/recodable/contribute-solidjs"
+            target="_blank"
+            class="text-blue-700 hover:text-blue-600 underline"
+          >
+            open-source
+          </a>
+          .
+        </p>
+      </footer>
     </div>
   );
 };
