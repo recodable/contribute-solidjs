@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "@types/koa": "^2.13.4",
+    "@types/redis": "^2.8.31",
     "autoprefixer": "^10.3.1",
     "concurrently": "^6.2.0",
     "postcss": "^8.3.5",

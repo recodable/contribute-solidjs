@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@koa/cors': ^3.1.0
   '@types/koa': ^2.13.4
+  '@types/redis': ^2.8.31
   autoprefixer: ^10.3.1
   concurrently: ^6.2.0
   dotenv: ^10.0.0
@@ -27,6 +28,7 @@ dependencies:
 
 devDependencies:
   '@types/koa': 2.13.4
+  '@types/redis': 2.8.31
   autoprefixer: 10.3.1_postcss@8.3.5
   concurrently: 6.2.0
   postcss: 8.3.5
@@ -488,6 +490,12 @@ packages:
 
   /@types/range-parser/1.2.4:
     resolution: {integrity: sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==}
+    dev: true
+
+  /@types/redis/2.8.31:
+    resolution: {integrity: sha512-daWrrTDYaa5iSDFbgzZ9gOOzyp2AJmYK59OlG/2KGBgYWF3lfs8GDKm1c//tik5Uc93hDD36O+qLPvzDolChbA==}
+    dependencies:
+      '@types/node': 16.4.0
     dev: true
 
   /@types/serve-static/1.13.10:

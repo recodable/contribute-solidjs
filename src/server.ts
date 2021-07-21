@@ -1,6 +1,6 @@
 import Koa from "koa";
 import fetch from "node-fetch";
-import utilities from "./Utilities.data";
+import utilities from "./utilities.data";
 import dotenv from "dotenv";
 import cors from "@koa/cors";
 import redis from "redis";
@@ -8,7 +8,10 @@ import { promisify } from "util";
 
 dotenv.config();
 
-const cache = redis.createClient();
+const cache = redis.createClient({
+  host: process.env.REDIS_HOST,
+  port: +process.env.REDIS_PORT,
+});
 const getCache = promisify(cache.get).bind(cache);
 const CACHE_KEY = "solid-open-issues";
 
