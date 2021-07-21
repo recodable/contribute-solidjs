@@ -9,8 +9,8 @@ WORKDIR /app
 COPY ["./package.json", "./pnpm-lock.yaml*", "./"]
 
 RUN npm install -g pnpm
-RUN pnpm install --production
+RUN pnpm install
 
 COPY . .
 
-CMD [ "pnpx", "ts-node", "--files", "src/server.ts" ]
+CMD [ "pnpx", "-y", "ts-node", "--files", "src/server.ts" ]

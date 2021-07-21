@@ -10,6 +10,6 @@ services:
   server:
     build: .
     ports:
-      - "80:8000"
+      - "4001:8000"
     depends_on:
       - redis
