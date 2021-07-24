@@ -2,10 +2,14 @@ version: "3.9"
 services:
   redis:
     image: redis
+    networks:
+      - "internal"
     expose:
       - 6379
     volumes:
       - ./tmp/redis:/data
+    labels:
+      - "traefik.enable=false"
 
   server:
     build: .
@@ -13,9 +17,19 @@ services:
       - "4001:8000"
     depends_on:
       - redis
-
+    networks:
+      - "web"
+      - "internal"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.my-app.rule=Host(`side.recodable.io`)"
-      - "traefik.http.routers.my-app.tls=true"
-      - "traefik.http.routers.my-app.tls.certresolver=lets-encrypt"
+      - "traefik.http.routers.contribute-solidjs.rule=Host(`side.recodable.io`)"
+      - "traefik.http.routers.contribute-solidjs.tls=true"
+      - "traefik.http.routers.contribute-solidjs.tls.certresolver=lets-encrypt"
+      - "traefik.docker.network=web"
+      - "traefik.port=80"
+
+networks:
+  web:
+    external: true
+  internal:
+    external: false
