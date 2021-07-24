@@ -3,9 +3,9 @@
 ## Prerequirements
 
 - [PNPM](https://pnpm.io/)
-- [Docker](https://www.docker.com/) (or just [Redis](https://redis.io/) running locally)
-- Node.js +16
+- Node.js 16 or later
 - [Github API Key](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+- [OPTIONAL] [Docker](https://www.docker.com/) (or just [Redis](https://redis.io/) running locally)
 
 ## Usage
 
