@@ -1,4 +1,6 @@
-export interface Resource {
+import { BaseResource } from "./types";
+
+export interface Resource extends BaseResource {
   title: string;
   link: string;
   author?: string;

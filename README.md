@@ -24,3 +24,13 @@ pnpm dev
 ```
 
 You can now access the app via `http://localhost:3000` and the API at `http://localhost:8000`
+
+## Good to know
+
+The project rely on Redis to cache Github API response on the server. This prevent to reach the limit but can also be an issue if working on the back-end.
+
+You can flush Redis cache to fetch fresh data with:
+
+```bash
+pnpm cache:clear
+```

@@ -7,10 +7,10 @@
     "start": "vite",
     "dev": "concurrently 'npm:dev:*'",
     "dev:web": "vite",
-    "dev:server": "docker-compose up -d && ts-node --files src/server.ts",
+    "dev:server": "ts-node --files src/server.ts",
     "build": "vite build",
     "serve": "vite preview",
-    "cache:clear": "docker exec -it solid-help-wanted_redis_1 redis-cli FLUSHALL"
+    "cache:clear": "docker-compose exec redis redis-cli FLUSHALL"
   },
   "devDependencies": {
     "autoprefixer": "^10.3.1",
@@ -26,6 +26,7 @@
     "@types/redis": "^2.8.31",
     "dotenv": "^10.0.0",
     "koa": "^2.13.1",
+    "lodash.uniqby": "^4.7.0",
     "node-fetch": "^2.6.1",
     "redis": "^3.1.2",
     "solid-js": "^1.0.2",
