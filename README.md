@@ -1,33 +1,46 @@
+# Contribute to Solid.js
+
+## Prerequirements
+
+- [PNPM](https://pnpm.io/)
+- [Docker](https://www.docker.com/) (or just [Redis](https://redis.io/) running locally)
+- Node.js 16
+
 ## Usage
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.js.org/) via `pnpm up -Lri`.
-
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+### Installation
 
 ```bash
-$ npm install # or pnpm install or yarn install
+pnpm install
 ```
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
 
-## Available Scripts
+### Run development environment
 
-In the project directory, you can run:
+#### Github API Key
 
-### `npm dev` or `npm start`
+You will need a Github API key to fetch data from Github.
+To generate one see [here](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Once generated, copy `.env.example` file as `.env` at the root of the project and copy your newly created Github API key as:
 
-The page will reload if you make edits.<br>
+```
+...
+GITHUB_TOKEN=YOUR_KEY_HERE
+...
+```
 
-### `npm run build`
+#### Run API with Docker
 
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
+We have a Docker setup to run the API and a Redis instance easily, just run:
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```bash
+docker-compose up -d
+```
 
-## Deployment
+#### Run front-end
 
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+```bash
+pnpm dev
+```
+
+You can now access the app via `http://localhost:3000`
